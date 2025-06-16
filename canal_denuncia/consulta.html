@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta de Status</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <h2>Canal do Colaborador - Consulta de Status</h2>
+  
+  <form id="consultaForm">
+    <label for="protocolo">Número de Protocolo:</label>
+    <input type="text" name="protocolo" id="protocolo" required placeholder="Digite o número do protocolo"><br>
+    
+    <button type="submit">Consultar</button>
+  </form>
+  
+  <div id="historico-container" style="display: none;" class="historico">
+    <h3>Seus protocolos recentes:</h3>
+    <div id="historico-protocolos"></div>
+    <button type="button" onclick="limparHistorico()" class="btn-secundario">Limpar histórico</button>
+  </div>
+  
+  <div id="resultado" class="resultado" style="display: none;">
+    <h3>Resultado da Consulta</h3>
+    <p><strong>Protocolo:</strong> <span id="resultado-protocolo"></span></p>
+    <p><strong>Status:</strong> <span id="resultado-status"></span></p>
+    <p><strong>Data de Registro:</strong> <span id="resultado-data"></span></p>
+    <p><strong>Classificação:</strong> <span id="resultado-classificacao"></span></p>
+    
+    <div id="resposta-container" class="resposta" style="display: none;">
+      <h4>Resposta:</h4>
+      <p id="resultado-resposta"></p>
+    </div>
+  </div>
+  
+  <div id="mensagem" class="mensagem" style="display: none;"></div>
+  
+  <div class="links">
+    <a href="index.html">Voltar para o formulário de denúncia</a>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

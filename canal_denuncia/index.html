@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canal de Denúncia</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <h2>Canal do Colaborador - Registro de Insatisfação</h2>
+
+  <form id="denunciaForm">
+    <label for="empresa">Empresa (Opcional):</label>
+    <input type="text" name="empresa" id="empresa"><br>
+
+    <label for="classificacao">Classificação:</label>
+    <select name="classificacao" id="classificacao" required>
+      <option value="">Selecione</option>
+      <option value="administrativo">Administrativo</option>
+      <option value="operacional">Operacional</option>
+      <option value="colaborador">Relacionamento</option>
+      <option value="equipamento">Equipamentos</option>
+      <option value="outros">Outros</option>
+    </select><br>
+
+    <label for="turno">Turno:</label>
+    <select name="turno" id="turno" required>
+      <option value="">Selecione</option>
+      <option value="manha">Manhã</option>
+      <option value="tarde">Tarde</option>
+      <option value="noite">Noite</option>
+    </select><br>
+
+    <label for="data_ocorrido">Data do ocorrido:</label>
+    <input type="date" name="data_ocorrido" id="data_ocorrido" required><br>
+
+    <label for="tempo_ocorrencia">Tempo da ocorrência:</label>
+    <input type="text" name="tempo_ocorrencia" id="tempo_ocorrencia"><br>
+
+    <label for="local">Local do problema:</label>
+    <input type="text" name="local" id="local" required><br>
+
+    <label for="setor">Setor envolvido:</label>
+    <input type="text" name="setor" id="setor" required><br>
+
+    <label for="descricao">Descrição:</label><br>
+    <textarea name="descricao" id="descricao" rows="5" required></textarea><br>
+
+    <label for="mensagem">Sua Mensagem:</label><br>
+    <textarea id="mensagem" name="mensagem" rows="5" required></textarea><br><br>
+
+    <button type="submit">Enviar Denúncia</button>
+  </form>
+
+  <div class="links">
+    <a href="consulta.html">Já possui um protocolo? Consulte o status da sua denúncia</a>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

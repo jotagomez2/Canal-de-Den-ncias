@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmação de Registro</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <h2>Canal do Colaborador - Registro Confirmado</h2>
+
+  <div class="protocolo-info">
+    <h3>Sua denúncia foi registrada com sucesso!</h3>
+    <p>Anote o número de protocolo para consultar o status posteriormente:</p>
+    <h2 id="protocolo-numero" style="color: #1a73e8;"></h2>
+    <p><small>Este protocolo foi salvo automaticamente no seu navegador.</small></p>
+  </div>
+
+  <div class="links">
+    <a href="consulta.html">Consultar Status</a>
+    <a href="index.html">Registrar Nova Denúncia</a>
+  </div>
+
+  <script>
+    // Exibir o protocolo da URL
+    window.onload = function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const protocolo = urlParams.get('protocolo');
+      
+      if (protocolo) {
+        document.getElementById('protocolo-numero').textContent = protocolo;
+        
+        // Salvar o protocolo atual
+        localStorage.setItem("protocolo_atual", protocolo);
+        
+        // Salvar na lista de protocolos (histórico)
+        let protocolos = JSON.parse(localStorage.getItem("protocolos_historico") || "[]");
+        if (!protocolos.includes(protocolo)) {
+          protocolos.push(protocolo);
+          localStorage.setItem("protocolos_historico", JSON.stringify(protocolos));
+        }
+      } else {
+        window.location.href = "index.html";
+      }
+    };
+  </script>
+</body>
+</html>
